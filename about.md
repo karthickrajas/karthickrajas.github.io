@@ -17,9 +17,9 @@ I believe, along with the technical knowledge and coding prowess, one should pos
 
 <img src="/assets/experience.JPG">
 
-###Useful Links
+### Useful Links
 
-* <a href="https://karthickrajas.github.io/usefulLinks">Data science learning material</a>
+* <a href="https://karthickrajas.github.io/usefulLinks">Data science learning material for students</a>
 
 ### Contact me
 
