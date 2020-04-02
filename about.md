@@ -4,7 +4,10 @@ title: About
 permalink: /about/
 ---
 
-I am a final year Masters student at Indian Insitute of Science, Bangalore. I will be graduating in Jun, 2019. Before **Masters on Business Analytics**, I worked as software developer in Tata Consulatancy Services for Media research. **I am looking for opportunities with emphasis on data science and machine learning in Healthcare domain.**
+**Aspiring Full stack Data Scientist**
+
+Data science researcher, Technical blogger and open source enthusiast. 
+I believe, along with the technical knowledge and coding prowess, one should possess general business understanding and industry specific knowledge to become a successful data scientist. This can help in impact-ful decision making and enrich customer experience.
 
 
 <img src="/assets/experience.JPG">
