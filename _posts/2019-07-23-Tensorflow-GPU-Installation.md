@@ -1,6 +1,6 @@
 ---
 layout: post
-excerpt:  Windows 10, 64 Bit
+excerpt: Installation notes:  Windows 10, 64 Bit 
 images:
   - url: /assets/keras_tensorflow_logo.jpg
 ---
