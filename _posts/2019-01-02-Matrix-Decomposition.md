@@ -4,11 +4,6 @@ excerpt: With Python and R code
 images:
   - url: /assets/matrix_decomposition.png
 ---
-<style type="text/css">
-  .gist {width:1000px !important;}
-  .gist-file
-  .gist-data {max-height: 1000px;max-width: 1000px;}
-</style>
 
 ### Introduction to Matrix Decomposition
 
@@ -39,14 +34,12 @@ Below are the algorithms that we will discuss in this post.
 LU technique decomposes a matrix into an upper, a lower triangular matrix of same size as of the original matrix. It works only for the square matrix and not all the matrix can be decomposed using LU technique. For a non singular matrix A, the LU decomposition is not unique. There can be more than one LU decomposition for the same non singular matrix. The reason for non-unique solution is because of the elementary transformation while solving for L and U. To find out unique solution for LU, constraints should be placed on LU matrix.
 
 <style type="text/css">
-  .gist {width:2500 !important;}
+  .gist {width:1000 !important;}
   .gist-file
-  .gist-data {max-height: 500px;max-width: 2500px;}
+  .gist-data {max-height: 1000px;max-width: 1000px;}
 </style>
 
-<p>
-  <script src="https://gist.github.com/karthickrajas/9f5feb0d674283426a99ce2c1e9c240c.js"></script>
-</p>
+<script src="https://gist.github.com/karthickrajas/9f5feb0d674283426a99ce2c1e9c240c.js"></script>
 
 ##### Note
 The LU decomposition is found iteratively and can't be successful for all the matrices easily. Hence a better/more stable way to solve the problem is called as LU decomposition with partial pivoting, which is built in python.
