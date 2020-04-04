@@ -42,7 +42,6 @@ LU technique decomposes a matrix into an upper, a lower triangular matrix of sam
 {% gist 9f5feb0d674283426a99ce2c1e9c240c %}
 
 <script src="https://gist.github.com/karthickrajas/9f5feb0d674283426a99ce2c1e9c240c.js"\>
-	
 </script\>
 
 ##### Note
