@@ -24,4 +24,3 @@ I believe, along with the technical knowledge and coding prowess, one should pos
 ### Contact me
 
 - [mail](mailto:karthick11b36@gmail.com)
-- [whatsapp](https://wa.me/918220759329)
