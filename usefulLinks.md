@@ -45,6 +45,7 @@ One should familiarize themselves with the following programming platforms:
 ### Recommended Machine Learning Projects
 
 * will be updated
+* will be updated
 
 ### Cheat sheets
 
