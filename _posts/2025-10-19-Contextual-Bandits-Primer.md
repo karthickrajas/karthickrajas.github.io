@@ -5,4 +5,5 @@ categories: [bandits , rl]
 tags: [rl]     # TAG names should always be lowercase
 ---
 
-<iframe src="https://drive.google.com/file/d/1ggnRN7QiIwfWh8wFbAdHbrBGWwJpdFxg/view" width="100%" height="600px"></iframe>
+<embed src="https://karthickrajas.github.io/assets/contextual_bandits_primer.pdf" type="application/pdf" width="100%" height="800px" />
+<embed src="https://karthickrajas.github.io/karthickrajas.github.io/assets/contextual_bandits_primer.pdf" type="application/pdf" width="100%" height="800px" />
