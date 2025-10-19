@@ -232,8 +232,8 @@ render_env(q_table)
 render_env(sarsa_table)
 ```
 
-![Q Learning path](/assets/imgs/q_learning_cliff.gif)
-![SARSA path](/assets/imgs/sarsa_cliff.gif)
+![Q Learning path](https://karthickrajas.github.io/assets/imgs/q_learning_cliff.gif)
+![SARSA path](https://karthickrajas.github.io/assets/imgs/sarsa_cliff.gif)
 
 #### Does that mean Q learning is better ? No, the answer is clear in the q table
 
@@ -241,8 +241,8 @@ render_env(sarsa_table)
 plot_heatmap(q_table)
 plot_heatmap(sarsa_table)
 ```
-![Q Learning table](/assets/imgs/q_learning_table.png)
-![SARSA table](/assets/imgs/sarsa_table.png)
+![Q Learning table](https://karthickrajas.github.io/assets/imgs/q_learning_table.png)
+![SARSA table](https://karthickrajas.github.io/assets/imgs/sarsa_table.png)
 
 From the table, it is clear that the q learning algorithm takes a much more riskier route (closer to the cliff) compared to the SARSA algorithm takes a safer route. This also highlights how greedy policy can compromise a quality output and risking the end goal, while onpolicy even takes a bit longer but has a better chance of reaching the end goal. **The q learning agent can thus converge to suboptimal policies if the exploration is insufficient or even if the reward is biased. **
 
