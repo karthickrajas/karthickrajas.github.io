@@ -20,25 +20,29 @@ To understand them in detail, we have to see the update rules of the examples we
 1. **SARSA [ On Policy ]**
 
 For SARSA (on-policy learning), the Q-value is updated using the current state-action pair and the next state-action pair sampled from the same policy:
-pol
+
 $$
-Q(s_t, a_t) \leftarrow Q(s_t, a_t) + \alpha \left[ r_{t+1} + \gamma Q(s_{t+1}, a_{t+1}) - Q(s_t, a_t) \right]
+\begin{equation}
+    Q(s_t, a_t) \leftarrow Q(s_t, a_t) + \alpha \left[ r_{t+1} + \gamma Q(s_{t+1}, a_{t+1}) - Q(s_t, a_t) \right]
+\end{equation}
 $$
 
 Where:
 
-- $Q(s_t, a_t)$ is the current estimate of the Q-value for state $s_t$ and action $a_t$.
-- $\alpha$ is the learning rate.
-- $r_{t+1}$ is the reward received after taking action $a_t$ in state $s_t$.
-- $\gamma$ is the discount factor.
-- $Q(s_{t+1}, a_{t+1})$ is the Q-value for the next state $s_{t+1}$ and the next action $a_{t+1}$ chosen by the same policy.
+- $ Q(s_t, a_t) $ is the current estimate of the Q-value for state $s_t$ and action $a_t$.
+- $ \alpha $ is the learning rate.
+- $ r_{t+1} $ is the reward received after taking action $a_t$ in state $s_t$.
+- $ \gamma $ is the discount factor.
+- $ Q(s_{t+1}, a_{t+1}) $ is the Q-value for the next state $s_{t+1}$ and the next action $a_{t+1}$ chosen by the same policy.
 
 2. **Q-Learning [ Off Policy ]**
 
 For Q-learning (off-policy learning), the update uses the maximum Q-value over all possible actions in the next state, regardless of the policy:
 
 $$
-Q(s_t, a_t) \leftarrow Q(s_t, a_t) + \alpha \left[ r_{t+1} + \gamma \max_{a} Q(s_{t+1}, a) - Q(s_t, a_t) \right]
+\begin{equation}
+    Q(s_t, a_t) \leftarrow Q(s_t, a_t) + \alpha \left[ r_{t+1} + \gamma \max_{a} Q(s_{t+1}, a) - Q(s_t, a_t) \right]
+\end{equation}
 $$
 
 Where:
@@ -241,7 +245,7 @@ render_env(sarsa_table)
 plot_heatmap(q_table)
 plot_heatmap(sarsa_table)
 ```
-![Q Learning table](https://karthickrajas.github.io/assets/imgs/q_learning_table.png)
+![Q Learning table](https://karthickrajas.github.io/assets/imgs/q_table.png)
 ![SARSA table](https://karthickrajas.github.io/assets/imgs/sarsa_table.png)
 
 From the table, it is clear that the q learning algorithm takes a much more riskier route (closer to the cliff) compared to the SARSA algorithm takes a safer route. This also highlights how greedy policy can compromise a quality output and risking the end goal, while onpolicy even takes a bit longer but has a better chance of reaching the end goal. **The q learning agent can thus converge to suboptimal policies if the exploration is insufficient or even if the reward is biased. **
