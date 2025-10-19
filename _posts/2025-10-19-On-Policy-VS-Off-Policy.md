@@ -4,6 +4,7 @@ date: 2025-10-19
 categories: [RL]
 tags: [rl,sarsa, q-learning, on-policy, off-policy, rl-basics]     # TAG names should always be lowercase
 image: https://karthickrajas.github.io/assets/imgs/q_table.png
+math : true
 ---
 
 ### Introduction
