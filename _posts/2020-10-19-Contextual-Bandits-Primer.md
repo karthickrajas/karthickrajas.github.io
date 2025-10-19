@@ -1,7 +1,7 @@
 ---
 title: Contextual Bandits - A Primer
-date: 2025-10-19
-categories: [bandits , rl]
+date: 2020-10-19
+categories: [Bandits , RL]
 tags: [rl]     # TAG names should always be lowercase
 ---
 
