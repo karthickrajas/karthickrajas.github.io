@@ -5,9 +5,5 @@ categories: [bandits , rl]
 tags: [rl]     # TAG names should always be lowercase
 ---
 
-<embed src="./assets/contextual_bandits_primer.pdf" width="500" height="375" type="application/pdf">
+<iframe src="https://drive.google.com/file/d/1ggnRN7QiIwfWh8wFbAdHbrBGWwJpdFxg/view?usp=sharing" width="100%" height="600px"></iframe>
 
-<object data="https://karthickrajas.github.io/assets/document.pdf" type="application/pdf" width="100%" height="600px">
-  <p>Your browser does not support embedded PDFs. 
-  <a href="https://karthickrajas.github.io//assets/document.pdf">Download PDF</a>.</p>
-<object>
