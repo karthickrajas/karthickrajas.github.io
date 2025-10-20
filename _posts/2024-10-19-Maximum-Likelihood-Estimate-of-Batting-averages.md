@@ -1,6 +1,6 @@
 ---
 title: Maximum Likelihood Estimation of Batting averages
-date: 2025-10-19
+date: 2024-10-19
 categories: [ML]
 tags: [classical-ml, ml, mle, statistics ]     # TAG names should always be lowercase
 image: https://karthickrajas.github.io/assets/imgs/batting_average.png
@@ -9,7 +9,7 @@ math : true
 
 Statistics play a huge role, behind the scenes, in any modern sport. For those who enjoy movies, there is no better way to explain it than watching `money ball` staring brad pitt. 
 
-This is true for cricket as well & one of the metrics that is important for cricket is player's batting average. Batting average is common statistical measure to evaluate a player's performance across several innings ( Most importantly during the recent tenture). 
+This is true for cricket as well & one of the metrics that is important for cricket is player's batting average. Batting average is common statistical measure to evaluate a player's performance across several innings (especially during recent times). 
 
 ### How are batting averages calculated ?
 
@@ -19,15 +19,15 @@ $$
 Batting Average = (Total Runs Scored)/(Number of Times out)
 $$
 
-The key point here is to note that, the innings where the batter remains `not out` do not cound towards the denominator. A higher batting average generally means consistent performance and more reliable.
+The key point here is to note that, the innings where the batter remains `not out` do not count towards the denominator. A higher batting average generally means consistent performance and a reliable player.
 
 Conceptually it makes sense, to have only `completed innings` as part of the denominator. If the player is not dismissed by the opponent before reaching a particular target, even if the game is over, the innings is considered `incomplete`. Dividing total runs by total innings (including not outs) would artificially lower the average by treating those incomplete innings as fully finished innings.
 
-Also, practically it can inflate averages as well. For example, MS Dhoni and Michael Bevan have unusually high averages because of frequent not-out innings, even though those innings sometimes involve shorter batting oppurtunities.
+Also, practically it can inflate averages as well. For example, MS Dhoni and Michael Bevan have unusually high averages because of frequent not-out innings, even though those innings sometimes involve shorter batting opportunities.
 
 **But what is the statistical validatity to do so ?**
 
-### Statistical estimating of batting average (parameter $\theta$) using MLE
+### Statistical estimation of batting average (parameter $\theta$) using MLE
 
 The conventional knowledge suggests to calculate parameter estimates for a given data, we would have to follow the below steps
 
@@ -130,7 +130,7 @@ That’s **total runs divided by the number of dismissals** — exactly the trad
 ### Intuitive Understanding based on survival analysis
 
 - When a player is *not out*, you only know they’ve scored *at least* that many runs; the innings is censored.
-- The exponential model assumes constant hazard (player's probability of getting out (dismissed) at any given run scored is constant). This is a **reasonable assumption**
+- The exponential model assumes constant hazard (player's probability of getting out (dismissed) at any given run scored is constant). This is a **reasonable assumption**.
 - The MLE adapts naturally by using only observed dismissals in the denominator.
 
 In short: the **MLE derivation** justifies the classical cricket batting average formula in a formal probabilistic framework. It proves that excluding *not outs* from the denominator is statistically correct because those are censored observations and contribute only to the likelihood’s exponential term.
