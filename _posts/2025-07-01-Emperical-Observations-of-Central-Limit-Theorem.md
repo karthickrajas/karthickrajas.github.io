@@ -252,14 +252,14 @@ for test in tests_:
 <details>
 <summary>Gamma distribution</summary>
 
-<img src="https://karthickrajas.github.io/assets/imgs/Gamma_experiment.png" alt="Gamma distribution">
+<img src="https://github.com/karthickrajas/karthickrajas.github.io/assets/imgs/Gamma_experiment.png" alt="Gamma distribution">
 
 </details>
 
 <details>
 <summary>Cauchy distribution</summary>
 
-<img src="https://karthickrajas.github.io/assets/imgs/Cauchy_experiment.png" alt="Cauchy distribution">
+<img src="https://github.com/karthickrajas/karthickrajas.github.io/assets/imgs/Cauchy_experiment.png" alt="Cauchy distribution">
 </details>
 
 Further Qualitative observations:
