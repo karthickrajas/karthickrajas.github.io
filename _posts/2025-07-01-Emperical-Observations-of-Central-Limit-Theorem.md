@@ -234,16 +234,20 @@ Beta distribution
 
 <details>
 <summary>Gamma distribution</summary>
+
 ![Gamma](https://karthickrajas.github.io/assets/imgs/Gamma_experiment.png)
+<img src="https://karthickrajas.github.io/assets/imgs/Gamma_experiment.png" alt="Gamma distribution"/>
 </details>
 
 <details>
 <summary>Cauchy distribution</summary>
+
 ![Cauchy](https://karthickrajas.github.io/assets/imgs/Cauchy_experiment.png)
 </details>
 
 <details>
 <summary>P Value table comparison using both the test</summary>
+
 
 | Distribution   | Params                     |   Numtrails |   Shapiro-Wilk-Pvalue |   D_Agostinos_K_squared-Pvalue | Comment                               |
 |:---------------|:---------------------------|------------:|----------------------:|-------------------------------:|:--------------------------------------|
