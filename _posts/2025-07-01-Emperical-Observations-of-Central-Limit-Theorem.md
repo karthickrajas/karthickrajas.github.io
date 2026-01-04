@@ -259,7 +259,7 @@ for test in tests_:
 <details>
 <summary>Cauchy distribution</summary>
 
-<img src="![Cauchy](https://karthickrajas.github.io/assets/imgs/Cauchy_experiment.png)" alt="Cauchy distribution">
+<img src="https://karthickrajas.github.io/assets/imgs/Cauchy_experiment.png" alt="Cauchy distribution">
 </details>
 
 Further Qualitative observations:
