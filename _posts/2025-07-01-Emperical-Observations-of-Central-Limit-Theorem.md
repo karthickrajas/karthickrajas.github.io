@@ -214,37 +214,44 @@ for test in tests_:
 ---
 ### Results and Discussion
 
-<details open>
-<summary>Binomial distribution</summary>
+#### Binomial distribution
 
 For a Binomial distribution, the shape is determined by the probability $p$ (which you referred to as $\mu$):
 
-- When $p = 0.5$: The distribution is perfectly symmetric from the start. Because it doesn't have to "overcome" any initial skewness, the sample means converge to a Normal distribution very rapidly, often appearing Gaussian with as few as 20 to 25 trials.
-- When $p \to 0$ or $p \to 1$: The distribution becomes heavily skewed (leaning toward one side). For example, if $p = 0.05$, the distribution is mostly zeros with occasional ones. To "smooth out" this extreme lopsidedness into a symmetric bell curve, the CLT requires a much larger sample size $n$.
+- When $p = 0.5$: The distribution is perfectly symmetric from the start. Because it doesn't have to "overcome" any initial skewness, the sample means converge to a Normal distribution very rapidly, often appearing Gaussian with as few as 20 to 25 trials
+
+- When $p \to 0$ or $p \to 1$: The distribution becomes heavily skewed (leaning toward one side). For example, if $p = 0.05$, the distribution is mostly zeros with occasional ones. To "smooth out" this extreme lopsidedness into a symmetric bell curve, the CLT requires a much larger sample size $n$
 
 we often use the Success-Failure Condition to determine if a Binomial distribution is "Normal enough" to use Gaussian approximations. We consider it approximately normal only if:
+
 1. $np \ge 10$
 2. $n(1-p) \ge 10$
 
 As you can see from this rule, if $p = 0.1$, you would need $n \ge 100$ to satisfy the condition, whereas if $p = 0.5$, you only need $n \ge 20$.
 
+<details open>
+<summary>Binomial distribution plots</summary>
+
 <img src="https://karthickrajas.github.io/assets/imgs/Binomial_experiment.png" alt="Binomial distribution"/>
 </details>
 
-<details>
-<summary>Poisson distribution</summary>
+#### Poisson distribution
 
 In a Poisson distribution, both the mean and the variance are equal to 1$\lambda$.2 The skewness of a Poisson distribution is calculated as:$$\text{Skewness} = \frac{1}{\sqrt{\lambda}}$$
+
 - High $\lambda$ (e.g., 25): The skewness is small ($\frac{1}{\sqrt{25}} = 0.2$). The distribution is already "pre-warmed" to look somewhat symmetric. Consequently, when you take even a modest sample size like $n=50$, the CLT easily pushes the distribution of the mean into a near-perfect Gaussian shape
+
 - Low $\lambda$ (e.g., 0.001): The skewness is massive ($\frac{1}{\sqrt{0.001}} \approx 31.6$). At this level, the distribution is almost entirely composed of zeros, with a rare "1" appearing once in a blue moon. It looks more like a vertical line than a curve. To "balance out" these rare events and create the characteristic tails of a Normal distribution, you need thousands of samples ($n > 2000$) to satisfy the theorem
 
 **the "speed" of convergence depends on the initial symmetry of the source distribution**
 
+<details>
+<summary>Poisson distribution plots</summary>
+
 <img src="https://karthickrajas.github.io/assets/imgs/Poisson_experiment.png" alt="Poisson distribution"/>
 </details>
 
-<details>
-<summary>Uniform distribution</summary>
+#### Uniform distribution
 
 Uniform distribution achieves normality quite faster compared to other distribution even with trails as low as 5.
 
@@ -256,19 +263,23 @@ The speed of convergence to a Normal distribution is primarily dictated by two f
 
 **This proves that "sufficiently large $n$" is not a fixed number—it is a variable that depends entirely on how much the starting distribution "disagrees" with the symmetry of a Normal curve.**
 
+<details>
+<summary>Uniform distribution plots</summary>
+
 <img src="https://karthickrajas.github.io/assets/imgs/Uniform_experiment.png" alt="Uniform distribution"/>
 </details>
 
-<details>
-<summary>Exponential distribution</summary>
+#### Exponential distribution
 
 Normality is achieved ONLY by increasing the sample size $n$. Whether $\lambda = 0.001$ or $\lambda = 25$, an individual exponential observation is always highly skewed. You will always need a solid sample size (typically 1$n \ge 30$) to see a normal distribution in the sample means
+
+<details>
+<summary>Exponential distribution plots</summary>
 
 <img src="https://karthickrajas.github.io/assets/imgs/Exponential_experiment.png" alt="Exponential distribution"/>
 </details>
 
-<details>
-<summary>Beta distribution</summary>
+#### Beta distribution
 
 The Beta distribution is unique because it is defined on the interval $[0, 1]$ and its shape can change drastically based on its parameters:
 - When $\alpha = \beta$: The distribution is perfectly symmetric
@@ -277,11 +288,13 @@ The Beta distribution is unique because it is defined on the interval $[0, 1]$ a
     - If $\alpha < \beta$, the distribution is "pushed" to the left (Right-skewed)
     - If $\alpha > \beta$, the distribution is "pushed" to the right (Left-skewed)
 
+<details>
+<summary>Beta distribution plots</summary>
+
 <img src="https://karthickrajas.github.io/assets/imgs/Beta_experiment.png" alt="Beta distribution"/>
 </details>
 
-<details>
-<summary>Gamma distribution</summary>
+#### Gamma distribution
 
 The Gamma distribution's shape is controlled by the shape parameter ($k$). The skewness of a Gamma distribution is defined as $2/\sqrt{k}$.
 1. The "Resistant" Case: Shape = 0.1
@@ -292,13 +305,17 @@ When your shape parameter is 0.1, the skewness is roughly 6.32. This is an incre
 - Shape = 2: The skewness drops to 1.41. Because the "starting point" is much less distorted, your test shows it becomes "normally distributed" with a sample size as low as $n=10$
 - Shape = 30: The skewness is only 0.36. At this point, the Gamma distribution already looks like a bell curve before you even apply the CLT. That is why your p-values (0.86 and 0.67) are so high—the data is "born" almost normal.
 
+<details>
+<summary>Gamma distribution plots</summary>
+
 <img src="https://karthickrajas.github.io/assets/imgs/Gamma_experiment.png" alt="Gamma distribution"/>
 </details>
 
-<details>
-<summary>Cauchy distribution</summary>
+#### Cauchy distribution
 
 The Cauchy distribution has "Fat Tails" so extreme that the mean and variance are mathematically undefined. If you take the average of 1,000 Cauchy samples, the result is still a Cauchy distribution. It never "thins out" into a Normal tail.
+<details>
+<summary>Cauchy distribution plots</summary>
 
 <img src="https://karthickrajas.github.io/assets/imgs/Cauchy_experiment.png" alt="Cauchy distribution"/>
 </details>
@@ -315,6 +332,7 @@ The Cauchy distribution has "Fat Tails" so extreme that the mean and variance ar
 
 <embed src="https://karthickrajas.github.io/assets/pdfs/distributional_observations.pdf" type="application/pdf" width="100%" height="800px" />
 </details>
+
 ---
 ### Summary of observations
 
