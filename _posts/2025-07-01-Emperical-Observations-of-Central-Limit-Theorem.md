@@ -214,53 +214,29 @@ for test in tests_:
 ---
 ### Results and Discussion
 
-<details open>
-<summary>Binomial distribution</summary>
 
+Binomial distribution
 ![Binomial](https://karthickrajas.github.io/assets/imgs/Binomial_experiment.png)
 
-</details>
 
-<details>
-<summary>Poisson distribution</summary>
-
+Poisson distribution
 ![Poisson](https://karthickrajas.github.io/assets/imgs/Poisson_experiment.png)
 
-</details>
-
-<details>
-<summary>Un distribution</summary>
+Uniform distribution
 
 ![Uniform](https://karthickrajas.github.io/assets/imgs/Uniform_experiment.png)
 
-</details>
-
-<details>
-<summary>Exponential distribution</summary>
-
+Exponential distribution
 ![Exponential](https://karthickrajas.github.io/assets/imgs/Exponential_experiment.png)
 
-</details>
-
-<details>
-<summary>Beta distribution</summary>
-
+Beta distribution
 ![Beta](https://karthickrajas.github.io/assets/imgs/Beta_experiment.png)
 
-</details>
+Gamma distribution
+![Gamma](https://karthickrajas.github.io/assets/imgs/Gamma_experiment.png)
 
-<details>
-<summary>Gamma distribution</summary>
-
-<img src="https://github.com/karthickrajas/karthickrajas.github.io/assets/imgs/Gamma_experiment.png" alt="Gamma distribution">
-
-</details>
-
-<details>
-<summary>Cauchy distribution</summary>
-
-<img src="https://github.com/karthickrajas/karthickrajas.github.io/assets/imgs/Cauchy_experiment.png" alt="Cauchy distribution">
-</details>
+Cauchy distribution
+![Cauchy](https://karthickrajas.github.io/assets/imgs/Cauchy_experiment.png)
 
 Further Qualitative observations:
 <embed src="https://karthickrajas.github.io/assets/pdfs/distributional_observations.pdf" type="application/pdf" width="100%" height="800px" />
