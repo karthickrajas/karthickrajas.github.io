@@ -1,5 +1,5 @@
 ---
-title: Emperical observations of Central Limit Theorem
+title: Chaos to Curve - How the Central Limit Theorem Tames Wild Distributions
 date: 2025-07-01
 categories: [statistics]
 tags: [CLT, theorem, normal]     # TAG names should always be lowercase
