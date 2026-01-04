@@ -214,14 +214,31 @@ for test in tests_:
 ---
 ### Results and Discussion
 
-<details>
-Binomial distribution
+<details open>
+<summary>Binomial distribution</summary>
+
+For a Binomial distribution, the shape is determined by the probability $p$ (which you referred to as $\mu$):
+
+- When $p = 0.5$: The distribution is perfectly symmetric from the start. Because it doesn't have to "overcome" any initial skewness, the sample means converge to a Normal distribution very rapidly, often appearing Gaussian with as few as 20 to 25 trials.
+- When $p \to 0$ or $p \to 1$: The distribution becomes heavily skewed (leaning toward one side). For example, if $p = 0.05$, the distribution is mostly zeros with occasional ones. To "smooth out" this extreme lopsidedness into a symmetric bell curve, the CLT requires a much larger sample size $n$.
+
+we often use the Success-Failure Condition to determine if a Binomial distribution is "Normal enough" to use Gaussian approximations. We consider it approximately normal only if:
+1. $np \ge 10$
+2. $n(1-p) \ge 10$
+
+As you can see from this rule, if $p = 0.1$, you would need $n \ge 100$ to satisfy the condition, whereas if $p = 0.5$, you only need $n \ge 20$.
 
 <img src="https://karthickrajas.github.io/assets/imgs/Binomial_experiment.png" alt="Binomial distribution"/>
 </details>
 
 <details>
-Poisson distribution
+<summary>Poisson distribution</summary>
+
+In a Poisson distribution, both the mean and the variance are equal to 1$\lambda$.2 The skewness of a Poisson distribution is calculated as:$$\text{Skewness} = \frac{1}{\sqrt{\lambda}}$$
+- High $\lambda$ (e.g., 25): The skewness is small ($\frac{1}{\sqrt{25}} = 0.2$). The distribution is already "pre-warmed" to look somewhat symmetric. Consequently, when you take even a modest sample size like $n=50$, the CLT easily pushes the distribution of the mean into a near-perfect Gaussian shape
+- Low $\lambda$ (e.g., 0.001): The skewness is massive ($\frac{1}{\sqrt{0.001}} \approx 31.6$). At this level, the distribution is almost entirely composed of zeros, with a rare "1" appearing once in a blue moon. It looks more like a vertical line than a curve. To "balance out" these rare events and create the characteristic tails of a Normal distribution, you need thousands of samples ($n > 2000$) to satisfy the theorem
+
+**the "speed" of convergence depends on the initial symmetry of the source distribution**
 
 <img src="https://karthickrajas.github.io/assets/imgs/Poisson_experiment.png" alt="Poisson distribution"/>
 </details>
@@ -229,11 +246,23 @@ Poisson distribution
 <details>
 <summary>Uniform distribution</summary>
 
+Uniform distribution achieves normality quite faster compared to other distribution even with trails as low as 5.
+
+The speed of convergence to a Normal distribution is primarily dictated by two factors: Symmetry and Tails
+
+- Perfect Symmetry: Unlike the Binomial (with $p \neq 0.5$) or the Exponential distribution, the Uniform distribution is perfectly symmetric around its mean ($\mu = \frac{a+b}{2}$). Because there is no "skew" to correct, the CLT doesn't have to work as hard to balance the distribution
+- Lack of Outliers (No Heavy Tails): The Uniform distribution is strictly bounded between $a$ and $b$. There are no extreme values or long "tails" that could pull the sample mean far away from the center
+- The "Irwin-Hall" Effect: The sum of independent uniform variables actually has its own named distribution called the Irwin-Hall distribution. By the time you sum just 3 uniforms, the resulting shape is already a smooth curve (though slightly flat at the top). By $n=5$, the density function is mathematically almost indistinguishable from a Gaussian bell curve
+
+**This proves that "sufficiently large $n$" is not a fixed number—it is a variable that depends entirely on how much the starting distribution "disagrees" with the symmetry of a Normal curve.**
+
 <img src="https://karthickrajas.github.io/assets/imgs/Uniform_experiment.png" alt="Uniform distribution"/>
 </details>
 
 <details>
 <summary>Exponential distribution</summary>
+
+Normality is achieved ONLY by increasing the sample size $n$. Whether $\lambda = 0.001$ or $\lambda = 25$, an individual exponential observation is always highly skewed. You will always need a solid sample size (typically 1$n \ge 30$) to see a normal distribution in the sample means
 
 <img src="https://karthickrajas.github.io/assets/imgs/Exponential_experiment.png" alt="Exponential distribution"/>
 </details>
@@ -241,11 +270,27 @@ Poisson distribution
 <details>
 <summary>Beta distribution</summary>
 
+The Beta distribution is unique because it is defined on the interval $[0, 1]$ and its shape can change drastically based on its parameters:
+- When $\alpha = \beta$: The distribution is perfectly symmetric
+    - If $\alpha = \beta = 1$, it is a Uniform distribution (which, as you noted earlier, converges extremely fast, around $n=5$)- If $\alpha = \beta = 3$, it looks like a "hump" that is already quite close to a Normal shape. Normality is achieved almost immediately
+- When $\alpha \neq \beta$: The distribution becomes skewed
+    - If $\alpha < \beta$, the distribution is "pushed" to the left (Right-skewed)
+    - If $\alpha > \beta$, the distribution is "pushed" to the right (Left-skewed)
+
 <img src="https://karthickrajas.github.io/assets/imgs/Beta_experiment.png" alt="Beta distribution"/>
 </details>
 
 <details>
 <summary>Gamma distribution</summary>
+
+The Gamma distribution's shape is controlled by the shape parameter ($k$). The skewness of a Gamma distribution is defined as $2/\sqrt{k}$.
+1. The "Resistant" Case: Shape = 0.1
+When your shape parameter is 0.1, the skewness is roughly 6.32. This is an incredibly "sharp" distribution, where almost all values are clustered near zero, with a very long, thin tail.
+- Even at $n=1000$, it is "Not normal
+- "Why: The "mass" of the distribution is so heavily concentrated at one extreme that even averaging 1,000 samples isn't enough to pull the mean away from the boundary and create the symmetric right-hand tail needed for a Gaussian curve. For a shape of 0.1, you might need $n > 5000$ to finally pass a normality test
+2. The "Fast" Case: Shape = 2 and Shape = 30
+- Shape = 2: The skewness drops to 1.41. Because the "starting point" is much less distorted, your test shows it becomes "normally distributed" with a sample size as low as $n=10$
+- Shape = 30: The skewness is only 0.36. At this point, the Gamma distribution already looks like a bell curve before you even apply the CLT. That is why your p-values (0.86 and 0.67) are so high—the data is "born" almost normal.
 
 <img src="https://karthickrajas.github.io/assets/imgs/Gamma_experiment.png" alt="Gamma distribution"/>
 </details>
@@ -253,84 +298,44 @@ Poisson distribution
 <details>
 <summary>Cauchy distribution</summary>
 
+The Cauchy distribution has "Fat Tails" so extreme that the mean and variance are mathematically undefined. If you take the average of 1,000 Cauchy samples, the result is still a Cauchy distribution. It never "thins out" into a Normal tail.
+
 <img src="https://karthickrajas.github.io/assets/imgs/Cauchy_experiment.png" alt="Cauchy distribution"/>
 </details>
 
-<details>
+<details open>
 <summary>P Value table comparison using both the test</summary>
 
-| Distribution   | Params                     |   Numtrails |   SW-Pvalue |   DAK-Pvalue | Comment                               |
-|:---------------|:---------------------------|------------:|------------:|-------------:|:--------------------------------------|
-| binomial       | {'n': 12, 'p': 0.1}        |          50 |        0    |         0.37 | The data is not normally distributed. |
-| binomial       | {'n': 12, 'p': 0.1}        |         100 |        0    |         0.02 | The data is not normally distributed. |
-| binomial       | {'n': 12, 'p': 0.1}        |         200 |        0    |         0    | The data is not normally distributed. |
-| binomial       | {'n': 12, 'p': 0.1}        |         300 |        0    |         0    | The data is not normally distributed. |
-| binomial       | {'n': 20, 'p': 0.5}        |          25 |        0.14 |         0.25 | The data is normally distributed.     |
-| binomial       | {'n': 20, 'p': 0.5}        |          50 |        0.31 |         0.69 | The data is normally distributed.     |
-| binomial       | {'n': 20, 'p': 0.5}        |         100 |        0    |         0.02 | The data is not normally distributed. |
-| binomial       | {'n': 18, 'p': 0.9}        |          70 |        0    |         0.03 | The data is not normally distributed. |
-| binomial       | {'n': 18, 'p': 0.9}        |         125 |        0    |         0.03 | The data is not normally distributed. |
-| binomial       | {'n': 18, 'p': 0.9}        |         250 |        0    |         0.01 | The data is not normally distributed. |
-| poisson        | {'lam': 0.001}             |          20 |        1    |       nan    | The data is normally distributed.     |
-| poisson        | {'lam': 0.001}             |         200 |        1    |       nan    | The data is normally distributed.     |
-| poisson        | {'lam': 0.001}             |        2000 |        1    |       nan    | The data is normally distributed.     |
-| poisson        | {'lam': 0.001}             |       20000 |        0    |         0    | The data is not normally distributed. |
-| poisson        | {'lam': 0.001}             |       25000 |        0    |         0    | The data is not normally distributed. |
-| poisson        | {'lam': 0.001}             |       25000 |        0    |         0    | The data is not normally distributed. |
-| poisson        | {'lam': 0.001}             |       25000 |        0    |         0    | The data is not normally distributed. |
-| poisson        | {'lam': 1}                 |          50 |        0    |         0.01 | The data is not normally distributed. |
-| poisson        | {'lam': 1}                 |          25 |        0    |         0    | The data is not normally distributed. |
-| poisson        | {'lam': 1}                 |          12 |        0.01 |         0.58 | The data is not normally distributed. |
-| poisson        | {'lam': 25}                |         100 |        0.02 |         0.1  | The data is not normally distributed. |
-| poisson        | {'lam': 25}                |          50 |        0.77 |         0.79 | The data is normally distributed.     |
-| poisson        | {'lam': 25}                |          25 |        0.19 |         0.65 | The data is normally distributed.     |
-| uniform        | {'low': 0, 'high': 1}      |           2 |      nan    |       nan    | The data is normally distributed.     |
-| uniform        | {'low': 0, 'high': 1}      |           3 |        0.74 |       nan    | The data is normally distributed.     |
-| uniform        | {'low': 0, 'high': 1}      |           4 |        0.91 |       nan    | The data is normally distributed.     |
-| exponential    | {'scale': 0.001}           |          10 |        0.04 |         0.27 | The data is not normally distributed. |
-| exponential    | {'scale': 0.001}           |          15 |        0.01 |         0.05 | The data is not normally distributed. |
-| exponential    | {'scale': 0.001}           |          30 |        0.02 |         0.23 | The data is not normally distributed. |
-| exponential    | {'scale': 1}               |           5 |        0.2  |       nan    | The data is normally distributed.     |
-| exponential    | {'scale': 1}               |          10 |        0    |         0    | The data is not normally distributed. |
-| exponential    | {'scale': 1}               |          15 |        0    |         0    | The data is not normally distributed. |
-| exponential    | {'scale': 25}              |           5 |        0.49 |       nan    | The data is normally distributed.     |
-| exponential    | {'scale': 25}              |          10 |        0.01 |         0    | The data is not normally distributed. |
-| exponential    | {'scale': 25}              |          15 |        0    |         0    | The data is not normally distributed. |
-| beta           | {'a': 2, 'b': 2}           |          40 |        0.25 |         0.67 | The data is normally distributed.     |
-| beta           | {'a': 2, 'b': 2}           |          80 |        0.02 |         0    | The data is not normally distributed. |
-| beta           | {'a': 2, 'b': 2}           |         100 |        0.02 |         0.01 | The data is not normally distributed. |
-| beta           | {'a': 20, 'b': 2}          |          10 |        0.01 |         0.03 | The data is not normally distributed. |
-| beta           | {'a': 20, 'b': 2}          |          15 |        0.12 |         0.36 | The data is normally distributed.     |
-| beta           | {'a': 2, 'b': 8}           |          60 |        0.07 |         0.24 | The data is normally distributed.     |
-| beta           | {'a': 2, 'b': 8}           |          90 |        0    |         0    | The data is not normally distributed. |
-| gamma          | {'shape': 0.1, 'scale': 1} |          50 |        0    |         0    | The data is not normally distributed. |
-| gamma          | {'shape': 0.1, 'scale': 1} |         250 |        0    |         0    | The data is not normally distributed. |
-| gamma          | {'shape': 0.1, 'scale': 1} |         500 |        0    |         0    | The data is not normally distributed. |
-| gamma          | {'shape': 0.1, 'scale': 1} |        1000 |        0    |         0    | The data is not normally distributed. |
-| gamma          | {'shape': 2, 'scale': 1}   |          10 |        0.09 |         0.36 | The data is normally distributed.     |
-| gamma          | {'shape': 2, 'scale': 1}   |          50 |        0.32 |         0.4  | The data is normally distributed.     |
-| gamma          | {'shape': 30, 'scale': 1}  |          10 |        0.86 |         0.67 | The data is normally distributed.     |
-| gamma          | {'shape': 30, 'scale': 1}  |          50 |        0.65 |         0.71 | The data is normally distributed.     |
-| cauchy         | {'size': 10}               |          10 |        0.36 |         0.32 | The data is normally distributed.     |
-| cauchy         | {'size': 10}               |         100 |        0    |         0    | The data is not normally distributed. |
-| cauchy         | {'size': 10}               |        1000 |        0    |         0    | The data is not normally distributed. |
-| cauchy         | {'size': 10}               |       10000 |        0    |         0    | The data is not normally distributed. |
-
-
+<embed src="https://karthickrajas.github.io/assets/pdfs/distribution_p_values.pdf" type="application/pdf" width="100%" height="800px" />
 </details>
 
 
+<details>
+<summary>Further Qualitative observations</summary>
 
-Further Qualitative observations:
 <embed src="https://karthickrajas.github.io/assets/pdfs/distributional_observations.pdf" type="application/pdf" width="100%" height="800px" />
+</details>
+---
+### Summary of observations
+
+| Distribution | Convergence Speed | Why? (The Simple Reason) |
+| --- | --- | --- |
+| **Uniform** | **Ultra-Fast** ($n \approx 5$) | It is perfectly symmetric and has no outliers; it’s already halfway to a bell curve. |
+| **Normal** | **Instant** ($n=1$) | It is already normal! Sampling doesn't change the shape, only the spread. |
+| **Beta** | **Fast** (if $\alpha \approx \beta$) | When parameters are equal, it is symmetric. "Unbalanced" parameters create skew. |
+| **Binomial** | **Moderate** (at $p=0.5$) | Symmetric but "chunky" (discrete). It needs some  to fill the gaps between bars. |
+| **Gamma** | **Variable** | Low shape parameters () create a "spike" that is very hard for the CLT to smooth out. |
+| **Exponential** | **Moderate/Slow** | It is always one-sided (skewed). It always needs  to build the "missing" left tail. |
+| **Poisson** | **Slow** (for low $\lambda$) | At low , it’s mostly zeros. You need huge samples to find enough "events" to balance it. |
+| **Cauchy** | **Never** | It has "infinite variance." The outliers are so extreme they break the math of the CLT. |
 
 ---
 
 ### The Outlier: Why the Cauchy Distribution Fails
 
-During the analysis, you likely noticed that the **Cauchy distribution** refused to conform to the bell curve, no matter how large the sample size  became.
+During the analysis, one would have likely noticed that the **Cauchy distribution** refused to conform to the bell curve, no matter how large the sample size  became.
 
-This happens because the CLT has a strict prerequisite: the population must have a **finite mean and finite variance**. The Cauchy distribution is "pathological"—its tails are so heavy that the integral used to calculate the mean does not converge. In mathematical terms, its variance is undefined ().
+This happens because the CLT has a strict prerequisite: the population must have a **finite mean and finite variance**. The Cauchy distribution is "pathological"—its tails are so heavy that the integral used to calculate the mean does not converge. In mathematical terms, its variance is undefined.
 
 Because the "average" of a Cauchy sample is dominated by extreme outliers that do not diminish with larger , the sample mean remains as volatile as a single observation. It follows a Cauchy distribution regardless of , effectively "breaking" the Central Limit Theorem.
 
