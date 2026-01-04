@@ -218,42 +218,49 @@ for test in tests_:
 <summary>Binomial distribution</summary>
 
 ![Binomial](https://karthickrajas.github.io/assets/imgs/Binomial_experiment.png)
+
 </details>
 
 <details>
 <summary>Poisson distribution</summary>
 
 ![Poisson](https://karthickrajas.github.io/assets/imgs/Poisson_experiment.png)
+
 </details>
 
 <details>
 <summary>Un distribution</summary>
 
 ![Uniform](https://karthickrajas.github.io/assets/imgs/Uniform_experiment.png)
+
 </details>
 
 <details>
 <summary>Exponential distribution</summary>
 
 ![Exponential](https://karthickrajas.github.io/assets/imgs/Exponential_experiment.png)
+
 </details>
 
 <details>
 <summary>Beta distribution</summary>
 
 ![Beta](https://karthickrajas.github.io/assets/imgs/Beta_experiment.png)
+
 </details>
 
 <details>
 <summary>Gamma distribution</summary>
 
 ![Gamma](https://karthickrajas.github.io/assets/imgs/Gamma_experiment.png)
+
 </details>
 
 <details>
 <summary>Cauchy distribution</summary>
 
 ![Cauchy](https://karthickrajas.github.io/assets/imgs/Cauchy_experiment.png)
+
 </details>
 
 Further Qualitative observations:
