@@ -214,97 +214,109 @@ for test in tests_:
 ---
 ### Results and Discussion
 
-
+<details>
 Binomial distribution
-![Binomial](https://karthickrajas.github.io/assets/imgs/Binomial_experiment.png)
 
+<img src="https://karthickrajas.github.io/assets/imgs/Binomial_experiment.png" alt="Binomial distribution"/>
+</details>
 
+<details>
 Poisson distribution
-![Poisson](https://karthickrajas.github.io/assets/imgs/Poisson_experiment.png)
 
-Uniform distribution
+<img src="https://karthickrajas.github.io/assets/imgs/Poisson_experiment.png" alt="Poisson distribution"/>
+</details>
 
-![Uniform](https://karthickrajas.github.io/assets/imgs/Uniform_experiment.png)
+<details>
+<summary>Uniform distribution</summary>
 
-Exponential distribution
-![Exponential](https://karthickrajas.github.io/assets/imgs/Exponential_experiment.png)
+<img src="https://karthickrajas.github.io/assets/imgs/Uniform_experiment.png" alt="Uniform distribution"/>
+</details>
 
-Beta distribution
-![Beta](https://karthickrajas.github.io/assets/imgs/Beta_experiment.png)
+<details>
+<summary>Exponential distribution</summary>
+
+<img src="https://karthickrajas.github.io/assets/imgs/Exponential_experiment.png" alt="Exponential distribution"/>
+</details>
+
+<details>
+<summary>Beta distribution</summary>
+
+<img src="https://karthickrajas.github.io/assets/imgs/Beta_experiment.png" alt="Beta distribution"/>
+</details>
 
 <details>
 <summary>Gamma distribution</summary>
 
-![Gamma](https://karthickrajas.github.io/assets/imgs/Gamma_experiment.png)
 <img src="https://karthickrajas.github.io/assets/imgs/Gamma_experiment.png" alt="Gamma distribution"/>
 </details>
 
 <details>
 <summary>Cauchy distribution</summary>
 
-![Cauchy](https://karthickrajas.github.io/assets/imgs/Cauchy_experiment.png)
+<img src="https://karthickrajas.github.io/assets/imgs/Cauchy_experiment.png" alt="Cauchy distribution"/>
 </details>
 
 <details>
 <summary>P Value table comparison using both the test</summary>
 
+| Distribution   | Params                     |   Numtrails |   SW-Pvalue |   DAK-Pvalue | Comment                               |
+|:---------------|:---------------------------|------------:|------------:|-------------:|:--------------------------------------|
+| binomial       | {'n': 12, 'p': 0.1}        |          50 |        0    |         0.37 | The data is not normally distributed. |
+| binomial       | {'n': 12, 'p': 0.1}        |         100 |        0    |         0.02 | The data is not normally distributed. |
+| binomial       | {'n': 12, 'p': 0.1}        |         200 |        0    |         0    | The data is not normally distributed. |
+| binomial       | {'n': 12, 'p': 0.1}        |         300 |        0    |         0    | The data is not normally distributed. |
+| binomial       | {'n': 20, 'p': 0.5}        |          25 |        0.14 |         0.25 | The data is normally distributed.     |
+| binomial       | {'n': 20, 'p': 0.5}        |          50 |        0.31 |         0.69 | The data is normally distributed.     |
+| binomial       | {'n': 20, 'p': 0.5}        |         100 |        0    |         0.02 | The data is not normally distributed. |
+| binomial       | {'n': 18, 'p': 0.9}        |          70 |        0    |         0.03 | The data is not normally distributed. |
+| binomial       | {'n': 18, 'p': 0.9}        |         125 |        0    |         0.03 | The data is not normally distributed. |
+| binomial       | {'n': 18, 'p': 0.9}        |         250 |        0    |         0.01 | The data is not normally distributed. |
+| poisson        | {'lam': 0.001}             |          20 |        1    |       nan    | The data is normally distributed.     |
+| poisson        | {'lam': 0.001}             |         200 |        1    |       nan    | The data is normally distributed.     |
+| poisson        | {'lam': 0.001}             |        2000 |        1    |       nan    | The data is normally distributed.     |
+| poisson        | {'lam': 0.001}             |       20000 |        0    |         0    | The data is not normally distributed. |
+| poisson        | {'lam': 0.001}             |       25000 |        0    |         0    | The data is not normally distributed. |
+| poisson        | {'lam': 0.001}             |       25000 |        0    |         0    | The data is not normally distributed. |
+| poisson        | {'lam': 0.001}             |       25000 |        0    |         0    | The data is not normally distributed. |
+| poisson        | {'lam': 1}                 |          50 |        0    |         0.01 | The data is not normally distributed. |
+| poisson        | {'lam': 1}                 |          25 |        0    |         0    | The data is not normally distributed. |
+| poisson        | {'lam': 1}                 |          12 |        0.01 |         0.58 | The data is not normally distributed. |
+| poisson        | {'lam': 25}                |         100 |        0.02 |         0.1  | The data is not normally distributed. |
+| poisson        | {'lam': 25}                |          50 |        0.77 |         0.79 | The data is normally distributed.     |
+| poisson        | {'lam': 25}                |          25 |        0.19 |         0.65 | The data is normally distributed.     |
+| uniform        | {'low': 0, 'high': 1}      |           2 |      nan    |       nan    | The data is normally distributed.     |
+| uniform        | {'low': 0, 'high': 1}      |           3 |        0.74 |       nan    | The data is normally distributed.     |
+| uniform        | {'low': 0, 'high': 1}      |           4 |        0.91 |       nan    | The data is normally distributed.     |
+| exponential    | {'scale': 0.001}           |          10 |        0.04 |         0.27 | The data is not normally distributed. |
+| exponential    | {'scale': 0.001}           |          15 |        0.01 |         0.05 | The data is not normally distributed. |
+| exponential    | {'scale': 0.001}           |          30 |        0.02 |         0.23 | The data is not normally distributed. |
+| exponential    | {'scale': 1}               |           5 |        0.2  |       nan    | The data is normally distributed.     |
+| exponential    | {'scale': 1}               |          10 |        0    |         0    | The data is not normally distributed. |
+| exponential    | {'scale': 1}               |          15 |        0    |         0    | The data is not normally distributed. |
+| exponential    | {'scale': 25}              |           5 |        0.49 |       nan    | The data is normally distributed.     |
+| exponential    | {'scale': 25}              |          10 |        0.01 |         0    | The data is not normally distributed. |
+| exponential    | {'scale': 25}              |          15 |        0    |         0    | The data is not normally distributed. |
+| beta           | {'a': 2, 'b': 2}           |          40 |        0.25 |         0.67 | The data is normally distributed.     |
+| beta           | {'a': 2, 'b': 2}           |          80 |        0.02 |         0    | The data is not normally distributed. |
+| beta           | {'a': 2, 'b': 2}           |         100 |        0.02 |         0.01 | The data is not normally distributed. |
+| beta           | {'a': 20, 'b': 2}          |          10 |        0.01 |         0.03 | The data is not normally distributed. |
+| beta           | {'a': 20, 'b': 2}          |          15 |        0.12 |         0.36 | The data is normally distributed.     |
+| beta           | {'a': 2, 'b': 8}           |          60 |        0.07 |         0.24 | The data is normally distributed.     |
+| beta           | {'a': 2, 'b': 8}           |          90 |        0    |         0    | The data is not normally distributed. |
+| gamma          | {'shape': 0.1, 'scale': 1} |          50 |        0    |         0    | The data is not normally distributed. |
+| gamma          | {'shape': 0.1, 'scale': 1} |         250 |        0    |         0    | The data is not normally distributed. |
+| gamma          | {'shape': 0.1, 'scale': 1} |         500 |        0    |         0    | The data is not normally distributed. |
+| gamma          | {'shape': 0.1, 'scale': 1} |        1000 |        0    |         0    | The data is not normally distributed. |
+| gamma          | {'shape': 2, 'scale': 1}   |          10 |        0.09 |         0.36 | The data is normally distributed.     |
+| gamma          | {'shape': 2, 'scale': 1}   |          50 |        0.32 |         0.4  | The data is normally distributed.     |
+| gamma          | {'shape': 30, 'scale': 1}  |          10 |        0.86 |         0.67 | The data is normally distributed.     |
+| gamma          | {'shape': 30, 'scale': 1}  |          50 |        0.65 |         0.71 | The data is normally distributed.     |
+| cauchy         | {'size': 10}               |          10 |        0.36 |         0.32 | The data is normally distributed.     |
+| cauchy         | {'size': 10}               |         100 |        0    |         0    | The data is not normally distributed. |
+| cauchy         | {'size': 10}               |        1000 |        0    |         0    | The data is not normally distributed. |
+| cauchy         | {'size': 10}               |       10000 |        0    |         0    | The data is not normally distributed. |
 
-| Distribution   | Params                     |   Numtrails |   Shapiro-Wilk-Pvalue |   D_Agostinos_K_squared-Pvalue | Comment                               |
-|:---------------|:---------------------------|------------:|----------------------:|-------------------------------:|:--------------------------------------|
-| binomial       | {'n': 12, 'p': 0.1}        |          50 |                  0    |                           0.37 | The data is not normally distributed. |
-| binomial       | {'n': 12, 'p': 0.1}        |         100 |                  0    |                           0.02 | The data is not normally distributed. |
-| binomial       | {'n': 12, 'p': 0.1}        |         200 |                  0    |                           0    | The data is not normally distributed. |
-| binomial       | {'n': 12, 'p': 0.1}        |         300 |                  0    |                           0    | The data is not normally distributed. |
-| binomial       | {'n': 20, 'p': 0.5}        |          25 |                  0.14 |                           0.25 | The data is normally distributed.     |
-| binomial       | {'n': 20, 'p': 0.5}        |          50 |                  0.31 |                           0.69 | The data is normally distributed.     |
-| binomial       | {'n': 20, 'p': 0.5}        |         100 |                  0    |                           0.02 | The data is not normally distributed. |
-| binomial       | {'n': 18, 'p': 0.9}        |          70 |                  0    |                           0.03 | The data is not normally distributed. |
-| binomial       | {'n': 18, 'p': 0.9}        |         125 |                  0    |                           0.03 | The data is not normally distributed. |
-| binomial       | {'n': 18, 'p': 0.9}        |         250 |                  0    |                           0.01 | The data is not normally distributed. |
-| poisson        | {'lam': 0.001}             |          20 |                  1    |                         nan    | The data is normally distributed.     |
-| poisson        | {'lam': 0.001}             |         200 |                  1    |                         nan    | The data is normally distributed.     |
-| poisson        | {'lam': 0.001}             |        2000 |                  1    |                         nan    | The data is normally distributed.     |
-| poisson        | {'lam': 0.001}             |       20000 |                  0    |                           0    | The data is not normally distributed. |
-| poisson        | {'lam': 0.001}             |       25000 |                  0    |                           0    | The data is not normally distributed. |
-| poisson        | {'lam': 0.001}             |       25000 |                  0    |                           0    | The data is not normally distributed. |
-| poisson        | {'lam': 0.001}             |       25000 |                  0    |                           0    | The data is not normally distributed. |
-| poisson        | {'lam': 1}                 |          50 |                  0    |                           0.01 | The data is not normally distributed. |
-| poisson        | {'lam': 1}                 |          25 |                  0    |                           0    | The data is not normally distributed. |
-| poisson        | {'lam': 1}                 |          12 |                  0.01 |                           0.58 | The data is not normally distributed. |
-| poisson        | {'lam': 25}                |         100 |                  0.02 |                           0.1  | The data is not normally distributed. |
-| poisson        | {'lam': 25}                |          50 |                  0.77 |                           0.79 | The data is normally distributed.     |
-| poisson        | {'lam': 25}                |          25 |                  0.19 |                           0.65 | The data is normally distributed.     |
-| uniform        | {'low': 0, 'high': 1}      |           2 |                nan    |                         nan    | The data is normally distributed.     |
-| uniform        | {'low': 0, 'high': 1}      |           3 |                  0.74 |                         nan    | The data is normally distributed.     |
-| uniform        | {'low': 0, 'high': 1}      |           4 |                  0.91 |                         nan    | The data is normally distributed.     |
-| exponential    | {'scale': 0.001}           |          10 |                  0.04 |                           0.27 | The data is not normally distributed. |
-| exponential    | {'scale': 0.001}           |          15 |                  0.01 |                           0.05 | The data is not normally distributed. |
-| exponential    | {'scale': 0.001}           |          30 |                  0.02 |                           0.23 | The data is not normally distributed. |
-| exponential    | {'scale': 1}               |           5 |                  0.2  |                         nan    | The data is normally distributed.     |
-| exponential    | {'scale': 1}               |          10 |                  0    |                           0    | The data is not normally distributed. |
-| exponential    | {'scale': 1}               |          15 |                  0    |                           0    | The data is not normally distributed. |
-| exponential    | {'scale': 25}              |           5 |                  0.49 |                         nan    | The data is normally distributed.     |
-| exponential    | {'scale': 25}              |          10 |                  0.01 |                           0    | The data is not normally distributed. |
-| exponential    | {'scale': 25}              |          15 |                  0    |                           0    | The data is not normally distributed. |
-| beta           | {'a': 2, 'b': 2}           |          40 |                  0.25 |                           0.67 | The data is normally distributed.     |
-| beta           | {'a': 2, 'b': 2}           |          80 |                  0.02 |                           0    | The data is not normally distributed. |
-| beta           | {'a': 2, 'b': 2}           |         100 |                  0.02 |                           0.01 | The data is not normally distributed. |
-| beta           | {'a': 20, 'b': 2}          |          10 |                  0.01 |                           0.03 | The data is not normally distributed. |
-| beta           | {'a': 20, 'b': 2}          |          15 |                  0.12 |                           0.36 | The data is normally distributed.     |
-| beta           | {'a': 2, 'b': 8}           |          60 |                  0.07 |                           0.24 | The data is normally distributed.     |
-| beta           | {'a': 2, 'b': 8}           |          90 |                  0    |                           0    | The data is not normally distributed. |
-| gamma          | {'shape': 0.1, 'scale': 1} |          50 |                  0    |                           0    | The data is not normally distributed. |
-| gamma          | {'shape': 0.1, 'scale': 1} |         250 |                  0    |                           0    | The data is not normally distributed. |
-| gamma          | {'shape': 0.1, 'scale': 1} |         500 |                  0    |                           0    | The data is not normally distributed. |
-| gamma          | {'shape': 0.1, 'scale': 1} |        1000 |                  0    |                           0    | The data is not normally distributed. |
-| gamma          | {'shape': 2, 'scale': 1}   |          10 |                  0.09 |                           0.36 | The data is normally distributed.     |
-| gamma          | {'shape': 2, 'scale': 1}   |          50 |                  0.32 |                           0.4  | The data is normally distributed.     |
-| gamma          | {'shape': 30, 'scale': 1}  |          10 |                  0.86 |                           0.67 | The data is normally distributed.     |
-| gamma          | {'shape': 30, 'scale': 1}  |          50 |                  0.65 |                           0.71 | The data is normally distributed.     |
-| cauchy         | {'size': 10}               |          10 |                  0.36 |                           0.32 | The data is normally distributed.     |
-| cauchy         | {'size': 10}               |         100 |                  0    |                           0    | The data is not normally distributed. |
-| cauchy         | {'size': 10}               |        1000 |                  0    |                           0    | The data is not normally distributed. |
-| cauchy         | {'size': 10}               |       10000 |                  0    |                           0    | The data is not normally distributed. |
+
 </details>
 
 
