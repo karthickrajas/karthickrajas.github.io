@@ -24,6 +24,7 @@ This has huge applications in the field of Data science and AI. It enables us to
 4. Monte carlo simulations
 
 In this blog, we will try to take different distributions and see if they follow CLT and see if there any distribution which doesn't adhere to CLT.
+
 ---
 
 ### Experimental Setup: Commonly used Distributions and their Parameters
