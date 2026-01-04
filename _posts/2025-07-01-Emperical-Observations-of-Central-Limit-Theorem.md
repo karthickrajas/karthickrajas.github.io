@@ -32,18 +32,26 @@ To empirically test the CLT, we analyze several probability distributions. Each 
 
 | Distribution | Parameters Used | Description |
 | --- | --- | --- |
-| **Binomial** |  | Discrete distribution representing successes in independent trials. |
-| **Poisson** |  | Expresses the probability of a given number of events occurring in a fixed interval. |
-| **Uniform** |  | All outcomes are equally likely within a defined range. |
-| **Exponential** |  | Describes the time between events in a Poisson process; highly skewed. |
-| **Gamma** |  | A flexible, skewed distribution used for waiting times. |
-| **Beta** |  | Defined on the interval [0, 1]; can be symmetric or skewed. |
-| **Cauchy** |  | A "pathological" distribution with heavy tails and no defined mean/variance. |
+| **Binomial** | $n=10, p=0.5$ | Discrete distribution representing successes in independent trials. |
+| **Poisson** | $\lambda = 4$ | Expresses the probability of a given number of events occurring in a fixed interval. |
+| **Uniform** | $a=0, b=1$ | All outcomes are equally likely within a defined range. |
+| **Exponential** | $\beta = 1.0$ | Describes the time between events in a Poisson process; highly skewed. |
+| **Gamma** | $k=2, \theta=2$ | A flexible, skewed distribution used for waiting times. |
+| **Beta** | $\alpha=2, \beta=5$ | Defined on the interval [0, 1]; can be symmetric or skewed. |
+| **Cauchy** | $x_0=0, \gamma=1$ | A "pathological" distribution with heavy tails and no defined mean/variance. |
 
 ---
 ### How to measure normality: Histogram, Boxplot, QQ Plot and statistical tests
 
-To verify if the distribution of sample means has become "Normal," we utilize three specific diagnostic plots.
+Whether the distribution of a sample statistic is Normal or not, depends primarily on three things :
+1. The nature of the original population distribution,  like Poisson in the given example
+2. The nature of the sample statistic, like mean and IQR in the given example below
+3. The sample size n, which is 12 in the given example. Larger the nn better one gets the idea about the distribution of the statistic, but it has nothing to do with Normal approximation per say. Here we start from smaller value of nn and go larger till we achieve normal distribution
+
+To see whether these sample statistics have Normal distribution, we are employing three simple graphical techniques namely the histogram, box and whiskers plot and Normal Probability Plot (NPP). For Normal distribution the histogram should be bell shaped, the box and whiskers plot should be symmetric about the central line within the box, and the NPP should be a straight line. Thus we see that though the distribution of the sample mean of Poisson(25) is approximately Normal, that of the sample IQR is not, for n=25.
+
+Example of poisson distribution: ![Poisson](https://karthickrajas.github.io/assets/imgs/poisson_example.png)
+
 
 #### **Histogram**
 
@@ -206,14 +214,47 @@ for test in tests_:
 ---
 ### Results and Discussion
 
-Binomial distribution
+<details open>
+<summary>Binomial distribution</summary>
+
 ![Binomial](https://karthickrajas.github.io/assets/imgs/Binomial_experiment.png)
+</details>
 
-Poisson distribution
+<details>
+<summary>Poisson distribution</summary>
+
 ![Poisson](https://karthickrajas.github.io/assets/imgs/Poisson_experiment.png)
+</details>
 
-Cauchy distribution
+<details>
+<summary>Un distribution</summary>
+
+![Uniform](https://karthickrajas.github.io/assets/imgs/Uniform_experiment.png)
+</details>
+
+<details>
+<summary>Exponential distribution</summary>
+
+![Exponential](https://karthickrajas.github.io/assets/imgs/Exponential_experiment.png)
+</details>
+
+<details>
+<summary>Beta distribution</summary>
+
+![Beta](https://karthickrajas.github.io/assets/imgs/Beta_experiment.png)
+</details>
+
+<details>
+<summary>Gamma distribution</summary>
+
+![Gamma](https://karthickrajas.github.io/assets/imgs/Gamma_experiment.png)
+</details>
+
+<details>
+<summary>Cauchy distribution</summary>
+
 ![Cauchy](https://karthickrajas.github.io/assets/imgs/Cauchy_experiment.png)
+</details>
 
 Further Qualitative observations:
 <embed src="https://karthickrajas.github.io/assets/pdfs/distributional_observations.pdf" type="application/pdf" width="100%" height="800px" />
