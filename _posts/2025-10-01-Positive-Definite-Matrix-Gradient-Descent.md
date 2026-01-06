@@ -1,5 +1,5 @@
 ---
-title: Maximum likelihood
+title: Maximum likelihood estimate, Positive definite matrix and Mean squared error
 date: 2025-07-01
 categories: [Linear algebra]
 tags: [positive definite, deep learning, matrices, gradient descent]     # TAG names should always be lowercase
