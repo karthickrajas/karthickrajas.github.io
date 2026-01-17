@@ -1,6 +1,6 @@
 ---
 title: On Policy VS Off Policy
-date: 2025-10-19
+date: 2026-01-07
 categories: [RL]
 tags: [rl,sarsa, q-learning, on-policy, off-policy, rl-basics]     # TAG names should always be lowercase
 image: https://karthickrajas.github.io/assets/imgs/q_table.png

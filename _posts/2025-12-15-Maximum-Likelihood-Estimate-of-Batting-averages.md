@@ -1,6 +1,6 @@
 ---
 title: Maximum Likelihood Estimation of Batting averages
-date: 2024-10-19
+date: 2025-12-15
 categories: [ML]
 tags: [classical-ml, ml, mle, statistics, survival, hazzard, reliability ]     # TAG names should always be lowercase
 image: https://karthickrajas.github.io/assets/imgs/batting_average.png

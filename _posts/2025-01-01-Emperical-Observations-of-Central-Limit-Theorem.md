@@ -1,6 +1,6 @@
 ---
 title: Chaos to Curve - How the Central Limit Theorem Tames Wild Distributions
-date: 2025-07-01
+date: 2025-01-01
 categories: [statistics]
 tags: [CLT, theorem, normal]     # TAG names should always be lowercase
 image: https://karthickrajas.github.io/assets/imgs/CLT.jpg

@@ -1,6 +1,6 @@
 ---
 title: Maximum likelihood estimate, Positive definite matrix and Mean squared error
-date: 2025-07-01
+date: 2026-01-13
 categories: [Linear algebra]
 tags: [positive definite, deep learning, matrices, gradient descent]     # TAG names should always be lowercase
 image: https://karthickrajas.github.io/assets/imgs/PDM.png

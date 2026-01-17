@@ -1,6 +1,6 @@
 ---
 title: Contextual Bandits - A Primer
-date: 2020-10-19
+date: 2025-12-01
 categories: [Bandits , RL]
 tags: [rl]     # TAG names should always be lowercase
 image: https://karthickrajas.github.io/assets/imgs/contextual_bandits.png
